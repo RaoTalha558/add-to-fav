@@ -7,7 +7,33 @@ html button
         </button>
     </div>
 </form>
-
+ jquery 
+ // JavaScript code to handle the response after form submission
+    jQuery(document).ready(function () {
+        $('form').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+            
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function (data) {
+                    // Handle the response here and update the button text/icon
+                    if (data.status === 1) {
+                        // Favorite saved, update button text/icon accordingly
+                        // For example, change button text to 'Remove Favorite' and change icon
+                        form.find('button').text('@lang('Remove Favorite')');
+                    } else {
+                        // Handle errors or redirection if needed
+                    }
+                },
+                error: function () {
+                    // Handle errors if any
+                }
+            });
+        });
+    });
 
 route
 Route::post('toggle-favorite/{id}', ['as' => 'toggle_favorite', 'uses' => 'BlogController@toggleFavorite']);
