@@ -1,3 +1,4 @@
+html button 
 <form method="POST" action="{{ route('toggle_favorite', ['id' => $ad->id]) }}">
     @csrf
     <div class="place-bid-btn">
@@ -8,9 +9,10 @@
 </form>
 
 
-
+route
 Route::post('toggle-favorite/{id}', ['as' => 'toggle_favorite', 'uses' => 'BlogController@toggleFavorite']);
 
+controller function
 public function toggleFavorite($id)
         {
             // Check user authentication
