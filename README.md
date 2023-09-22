@@ -12,7 +12,7 @@ html button
 route
 Route::post('toggle-favorite/{id}', ['as' => 'toggle_favorite', 'uses' => 'BlogController@toggleFavorite']);
 
-controller function
+controller function 
 public function toggleFavorite($id)
         {
             // Check user authentication
